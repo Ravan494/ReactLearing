@@ -1,0 +1,15 @@
+ul
+{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+h1
+{
+    text-align: center;
+}
