@@ -1,0 +1,25 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  padding: 2rem 3rem;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.container ul
+{
+  display: flex;
+  list-style-type: none;
+  margin: 20px;
+  gap: 20px;
+}
+button
+{
+  padding: 5px;
+}
+button:active
+{
+
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
