@@ -6,6 +6,7 @@ export default function Header() {
     <div>
         <h1>Header</h1>
         <nav>
+          
             <ul>
                 <li><Link to={'/'}> Home</Link></li>
                 <li><Link to={'/Blog'}> Blog</Link></li>

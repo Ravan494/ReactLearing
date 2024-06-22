@@ -8,6 +8,7 @@ import HomePage from './component/Home';
 import { createElement } from 'react';
 import Blog from './component/Blog';
 import About from './component/About';
+import BlogDetails from './component/BlogDetails';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,12 +19,16 @@ let Routes = createBrowserRouter(
       element:<HomePage/>
     },
     {
-      path:'/Blog',
+      path:'Blog',
       element:<Blog/>
     },
     {
-      path:'/About',
+      path:'About',
       element:<About/>
+    },
+    {
+      path:'Blog/:id',
+      element:<BlogDetails/>
     }
   ]
 )
