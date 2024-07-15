@@ -11,6 +11,8 @@ export default function Header() {
                 <li><Link to={'/'}> Home</Link></li>
                 <li><Link to={'/Blog'}> Blog</Link></li>
                 <li><Link to={'/About'}> About</Link></li>
+                <li><Link to={'/Control-Form'}> Control-Form</Link></li>
+                <li><Link to={'/Password-genreter'}> Password-genreter</Link></li>
             </ul>
         </nav>
     </div>

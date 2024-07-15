@@ -9,6 +9,9 @@ import { createElement } from 'react';
 import Blog from './component/Blog';
 import About from './component/About';
 import BlogDetails from './component/BlogDetails';
+import Error404 from './component/Error404';
+import ControlForm from './component/ControlForm';
+import Password from './component/Password';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,6 +32,18 @@ let Routes = createBrowserRouter(
     {
       path:'Blog/:id',
       element:<BlogDetails/>
+    },
+    {
+      path:'Control-Form',
+      element:<ControlForm/>
+    },
+    {
+      path:'Password-Genreter',
+      element:<Password/>
+    },
+    {
+      path:'*',
+      element:<Error404/>
     }
   ]
 )
