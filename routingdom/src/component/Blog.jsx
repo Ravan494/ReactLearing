@@ -6,13 +6,14 @@ import { blogs } from '../Data/Blogs'
 import { Link } from 'react-router-dom'
 
 export default function Blog() {
+  console.log(blogs);
   let allBlogs = blogs.map((v,i)=>{
     return(
-      <div className="blogItems" key={i}>
-        <h4>{v.title}</h4>
+      <div className="blogItems border border-solid border-black p-6" key={i}>
+        <h4 className='font-extrabold font-serif'>{v.title}</h4>
         <hr />
-        <p>{v.body}</p>
-        <button><Link to={`/Blog/${v.id}`}>Read me</Link></button>
+        <p className='text-left'>{v.body}</p>
+        <button className='border-[2px] border-black rounded-lg p-1 px-2 mt-4'><Link to={`/Blog/${v.id}`}>Read me</Link></button>
       </div>
     )
   })
@@ -20,9 +21,10 @@ export default function Blog() {
   return (
     <>
     <Header/>
-    <h1>Blog Page</h1>
+    <hr className='my-3'/>
+    <h1 className='font-extrabold underline font-serif'>Blog Page</h1>
   
-    <div className="container">
+    <div className="container grid grid-cols-3 gap-4 mx-auto px-16 py-8">
       {allBlogs}
     </div>
     </>

@@ -37,10 +37,10 @@ export default function Password() {
     }
   return (
     <>
-    
+    <Header/>
     <ToastContainer 
         position="top-center"
-        autoClose={5000}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -54,11 +54,11 @@ export default function Password() {
         <div className="password">
             <h1>Password</h1>
             <div className="pass-input">
-                <input type="text" placeholder="Genrate Password" value={password} readOnly/>
-                <button onClick={copyPass}>Copy</button>
+                <input type="text" className='rounded border-[2px] border-black' placeholder="Genrate Password" value={password} readOnly/>
+                <button className='rounded border-[2px] border-black' onClick={copyPass}>Copy</button>
             </div>
             <div className="lenght">
-                <label>Password Lenght</label>
+                <label>Password Lenght<p className='text-left text-[15px] font-medium'>(lenght must between 8 to 20)</p></label>
                 <input type="number" min={8} max={20} value={lenght} onChange={(event)=>setLenght(event.target.value)}/>
             </div>
             <div className="lenght">
@@ -78,7 +78,7 @@ export default function Password() {
                 <input type="checkbox" checked={symbol} onChange={()=>setSymbol(!symbol)}/>
             </div>
             
-            <button id='submit' onClick={genreatePassword}>Genrate Password</button>
+            <button className='bg-[rgb(_8_255_234)] hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full' id='submit' onClick={genreatePassword}>Genrate Password</button>
         </div>
     </div>
     </>

@@ -37,25 +37,33 @@ export default function ControlForm() {
         }
         else
         {
-          
-            let oldAllUser = [...alluser,user];
-            setAllUser(oldAllUser);
-            if(user.index === '')
-                {
-                    toast.success('User added successfully!');
-                }
-                else
-                {
-                    toast.success('User updated successfully!');
-                }
-            setUser({
-                uname : '',
-                uemail: '',
-                uphone: '',
-                uaddress: '',
-                index: ''
-            })
-            console.log(alluser);
+            if(user.uname=='' || user.uemail == '' || user.uphone=='' || user.uaddress=='')
+            {
+                toast.error('Please fill all the fields!');
+            }
+            else
+            {
+
+                
+                let oldAllUser = [...alluser,user];
+                setAllUser(oldAllUser);
+                if(user.index === '')
+                    {
+                        toast.success('User added successfully!');
+                    }
+                    else
+                    {
+                        toast.success('User updated successfully!');
+                    }
+                setUser({
+                    uname : '',
+                    uemail: '',
+                    uphone: '',
+                    uaddress: '',
+                    index: ''
+                })
+                console.log(alluser);
+            }
         }   
     }
 
@@ -78,7 +86,8 @@ export default function ControlForm() {
         <>
         
             <Header/>
-      <Container>
+            <hr className='my-3'/>
+      <div className='wcontainer'>
         <ToastContainer 
         position="top-center"
         autoClose={5000}
@@ -97,23 +106,23 @@ export default function ControlForm() {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="exampleInputName">Name</label>
-                    <input type="text" onChange={getValue} className="form-control name" name='uname' id="exampleInputName" value={user.uname} placeholder="Enter Name" />
+                    <input type="text" onChange={getValue} className="rounded-md border-[2px] border-black py-1 h-8 text-left p-1" name='uname' id="exampleInputName" value={user.uname} placeholder="Enter Name" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail">Email</label>
-                    <input type="email" onChange={getValue} className="form-control email" name='uemail' id="exampleInputEmail" value={user.uemail} placeholder="Enter Email" />
+                    <input type="email" onChange={getValue} className="rounded-md border-[2px] border-black py-1 h-8 text-left p-1" name='uemail' id="exampleInputEmail" value={user.uemail} placeholder="Enter Email" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputNumber">Number
                     </label>
-                    <input type="number" onChange={getValue} className="form-control phone" name='uphone' id="exampleInputNumber" value={user.uphone} placeholder="Enter Number" />
+                    <input type="number" onChange={getValue} className="rounded-md border-[2px] border-black py-1 h-8 text-left p-1" name='uphone' id="exampleInputNumber" value={user.uphone} placeholder="Enter Number" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleFormControlTextarea1">Address</label>
-                    <textarea className="form-control" onChange={getValue} name='uaddress' id="exampleFormControlTextarea1" value={user.uaddress} rows="3"></textarea>
+                    <textarea className="rounded-md border-[2px] border-black py-1 h-16 text-left p-1" onChange={getValue} name='uaddress' id="exampleFormControlTextarea1" value={user.uaddress} rows="5"></textarea>
                 </div>
 
-                <button>{user.index == '' ? 'Submit' : 'Update'}</button>
+                <button className='py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75'>{user.index == '' ? 'Submit' : 'Update'}</button>
             </form>
         </Col>
         <Col lg={12}>
@@ -138,7 +147,7 @@ export default function ControlForm() {
                     <td>{item.uemail}</td>
                     <td>{item.uphone}</td>
                     <td>{item.uaddress}</td>
-                    <td><button onClick={()=>editRow(i)}>Update</button> <button onClick={()=>deleteRow(i)}>Delete</button></td>
+                    <td className='gap-1'><button className='border-[2px] border-black rounded-lg p-1 px-2 bg-green-600' onClick={()=>editRow(i)}>Update</button> <button className='border-[2px] border-black bg-red-600 rounded-lg p-1 px-2' onClick={()=>deleteRow(i)}>Delete</button></td>
                 </tr>
                 })
                 
@@ -153,7 +162,7 @@ export default function ControlForm() {
         </tbody>
     </Table>
         </Col>
-        </Container>
+        </div>
         </>
   )
 }

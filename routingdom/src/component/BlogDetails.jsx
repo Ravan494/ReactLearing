@@ -11,8 +11,8 @@ export default function BlogDetails() {
   return (
     <>
     <Header/>
-
-    <div>BlogDetails</div>
+    <hr className='my-3'/>
+    <div className='font-extrabold underline font-serif'>BlogDetails</div>
     <h1>{courrentData.title}</h1>
     <h5>{courrentData.body}</h5>
     </>

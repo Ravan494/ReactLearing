@@ -12,6 +12,9 @@ import BlogDetails from './component/BlogDetails';
 import Error404 from './component/Error404';
 import ControlForm from './component/ControlForm';
 import Password from './component/Password';
+import Weather from './component/Weather';
+import Product from './component/Product';
+import Try from './component/Try';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -40,6 +43,18 @@ let Routes = createBrowserRouter(
     {
       path:'Password-Genreter',
       element:<Password/>
+    },
+    {
+      path:'Weather',
+      element:<Weather/>
+    },
+    {
+      path:'Product',
+      element:<Product/>
+    },
+    {
+      path:'Try',
+      element:<Try/>
     },
     {
       path:'*',

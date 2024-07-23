@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *{
   padding: 0;
   margin: 0;
@@ -111,4 +114,40 @@ th,td
 .lenght input[type='number']::-webkit-outer-spin-button
 {
   display: none;
+}
+
+/* weather */
+.wcontainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.wcontainer .card
+{
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+}
+.placeName
+{
+    display: flex;
+    justify-content: space-between;
+}
+.otherDetails
+{
+    display: flex;
+    justify-content: space-between;
+}
+.result
+{
+  border: 2px solid black;
+  border-radius: 18px;
+  background :linear-gradient(to bottom right,rgb(252, 99, 11),white,rgb(1, 66, 1));
 }
